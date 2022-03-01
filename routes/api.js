@@ -15,7 +15,7 @@ router.post("/", (req, res, next) => {
     }
 
     Post.findByIdAndUpdate(req.body._id, {$push: {"comments": comment}}, {new: true})
-        .then(doc => res.redirect("/"))
+        .then(doc => res.redirect("/api"))
         .catch(err => console.log(err))
 })
 
